@@ -12,6 +12,10 @@
     <artifactId>sandbox-debug-module</artifactId>
     <name>sandbox-debug-module ${sandbox.version}</name>
 
+    <properties>
+        <elasticsearch-version>7.1.0</elasticsearch-version>
+    </properties>
+
     <build>
         <finalName>sandbox-debug-module-${sandbox.version}</finalName>
         <plugins>
@@ -41,6 +45,16 @@
     </build>
 
     <dependencies>
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-high-level-client</artifactId>
+            <version>${elasticsearch-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.16</version>
+        </dependency>
 
         <!-- DEBUG工程公共依赖模块，SANDBOX父工程托管 -->
         <dependency>
@@ -77,6 +91,10 @@
             <artifactId>logback-classic</artifactId>
             <version>1.2.1</version>
         </dependency>
-
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+        </dependency>
     </dependencies>
 </project>
